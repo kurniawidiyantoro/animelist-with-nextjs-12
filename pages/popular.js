@@ -28,6 +28,7 @@ const Popular = () => {
 
   return (
     <div>
+        <HeadTag title='Popular'/>
       <Navigation />
       <Search/>
       <AnimeList data={topAnime} />

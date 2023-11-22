@@ -11,7 +11,7 @@ const AnimeList = ({ data }) => {
           <Link  href="/popular"><a className='text-decoration-none text-primary'>lihat semua...</a></Link>
         </div>
         {data.data?.map((item) => (
-          <Col key={item.mal_id} className="col-md-3 mb-2">
+          <Col key={item.mal_id} md='3' xs='6' className="mb-2">
             <Card className="h-100 bg-dark text-light border border-secondary rounded">
               <Image
                 alt="anime image"

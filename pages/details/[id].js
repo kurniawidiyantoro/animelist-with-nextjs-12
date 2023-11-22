@@ -6,6 +6,8 @@ import Footer from "../../component/Footer";
 import Image from "next/image";
 import { Button, Col, Container, Row, Table } from "reactstrap";
 import YouTube from "react-youtube";
+import HeadTag from "../../component/HeadTag";
+
 
 const Details = () => {
   const router = useRouter();
@@ -30,8 +32,8 @@ const Details = () => {
 
   // Youtube player handling
   const opts = {
-    height: "300",
-    width: "400",
+    height: "250",
+    width: "300",
     playerVars: {
       autoplay: 0,
     },
@@ -41,6 +43,7 @@ const handleButtonTrailer = () => {
 }
   return (
     <div>
+        <HeadTag title='Details'/>
       <Navigation />
       {!topAnime.images ? (
         <p className="text-white">loading...</p>
@@ -48,7 +51,7 @@ const handleButtonTrailer = () => {
         <div>
           <Container >
             <Row className="d-flex justify-content-start">
-              <Col className="col-md-4">
+              <Col md='4' xs='12'>
                 <Image
                   className=" rounded "
                   src={topAnime.images.webp.image_url}
@@ -56,7 +59,7 @@ const handleButtonTrailer = () => {
                   height={400}
                 />
               </Col>
-              <Col className="col-md-">
+              <Col  md='8' xs='12' >
                 <Table bordered dark>
                   <thead>
                     <tr>

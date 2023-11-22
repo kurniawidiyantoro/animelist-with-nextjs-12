@@ -7,6 +7,7 @@ import Link from "next/link";
 import Navigation from "../../component/Navigation";
 import Search from "../../component/Search";
 import Footer from "../../component/Footer";
+import HeadTag from "../../component/HeadTag";
 
 const Find = () => {
   const router = useRouter();
@@ -32,13 +33,14 @@ const Find = () => {
 
   return (
     <>
+    <HeadTag title='Search'/>
       <Navigation />
       <Search />
       <div className="container">
         <Row>
           <h2 className="text-white">pencarian untuk {find}</h2>
           {animeData.map((item) => (
-            <Col key={item.mal_id} className="col-md-3 mb-2">
+            <Col key={item.mal_id}  md='3' xs='6' className="mb-2">
               <Card className="h-100 bg-dark text-light border border-secondary rounded">
                 {/* <img alt="anime image" src={item.images.webp.image_url} /> */}
                 <Image

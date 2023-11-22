@@ -14,8 +14,8 @@ router.push(`/search/${find}`)
 
   return (
     <div className="mb-5 mt-2">
-      <Row className="justify-content-center">
-        <Col className="col-md-6">
+      <Row className=" justify-content-center">
+        <Col md='6' xs='8'>
           <h4 className="text-center text-white">SEARCH ANIME</h4>
           <Form onSubmit={handleSearch}>
 
