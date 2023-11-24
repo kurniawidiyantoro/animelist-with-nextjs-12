@@ -1,4 +1,5 @@
 import AnimeList from "../component/AnimeList";
+import Category from "../component/Category";
 import Footer from "../component/Footer";
 import HeadTag from "../component/HeadTag";
 import Navigation from "../component/Navigation";
@@ -7,10 +8,11 @@ import axios from "axios";
 
 export default function Home({data}) {
   return (
-    <div>
+    <div className="container">
       <HeadTag title='Home'/>
       <Navigation />
       <Search />
+      <Category linkHref='popular' title='POPULAR ANIME'/>
       <AnimeList data={data} />
       <Footer/>
     </div>

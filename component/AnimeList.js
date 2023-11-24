@@ -2,14 +2,12 @@ import { Card, CardBody, CardTitle, Button, Row, Col } from "reactstrap";
 import Image from "next/image";
 import Link from "next/link";
 
+
 const AnimeList = ({ data }) => {
+
   return (
     <div className="container text-white">
       <Row>
-        <div className="d-flex justify-content-between align-items-end mb-1">
-          <h3>POPULAR ANIME</h3>
-          <Link  href="/popular"><a className='text-decoration-none text-primary'>lihat semua...</a></Link>
-        </div>
         {data.data?.map((item) => (
           <Col key={item.mal_id} md='3' xs='6' className="mb-2">
             <Card className="h-100 bg-dark text-light border border-secondary rounded">

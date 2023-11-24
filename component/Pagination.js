@@ -19,6 +19,10 @@ const Pagination = ({page, last, setPage}) => {
         setPage((prev) => prev - 1 )
         scrool()
     }
+const handleLastPage = () => {
+   setPage(last)
+}
+
   return (
     <div className='d-flex justify-content-center align-content-center gap-3'>
         {page <= 1 ? null : <Button className='bg-warning text-black' onClick={handlePrevPage}>
