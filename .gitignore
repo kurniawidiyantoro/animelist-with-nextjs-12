@@ -2,11 +2,6 @@
 
 
 
-# files
-test.js
-test2.js
-testsearch.js
-
 # dependencies
 /node_modules
 /.pnp
@@ -16,7 +11,6 @@ testsearch.js
 /coverage
 
 # next.js
-/.next/
 /out/
 
 # production

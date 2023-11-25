@@ -12,31 +12,34 @@ const Popular = () => {
   const [page, setPage] = useState(1);
   const [topAnime, setTopAnime] = useState([]);
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/anime?page=${page}`
-      );
-      //   const pagination = response.data.pagination.last_visible_page
-      setTopAnime(response.data);
-    } catch (error) {
-      console.log("masuk ke error", error);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/anime?page=${page}`
+        );
+        //   const pagination = response.data.pagination.last_visible_page
+        setTopAnime(response.data);
+      } catch (error) {
+        console.log("masuk ke error", error);
+      }
+    };
     fetchData();
   }, [page]);
 
   return (
     <div className="container">
-      <HeadTag title='Popular'/>
+      <HeadTag title="Popular" />
       <Navigation />
-      <Search/>
-      <Category title='POPULAR ANIME'/>
+      <Search />
+      <Category title="POPULAR ANIME" />
       <AnimeList data={topAnime} />
-      <Pagination page={page} last={topAnime.pagination?.last_visible_page} setPage={setPage} />
-      <Footer/>
+      <Pagination
+        page={page}
+        last={topAnime.pagination?.last_visible_page}
+        setPage={setPage}
+      />
+      <Footer />
     </div>
   );
 };

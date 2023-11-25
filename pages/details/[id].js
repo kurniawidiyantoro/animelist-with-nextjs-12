@@ -15,18 +15,17 @@ const Details = () => {
   const [topAnime, setTopAnime] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/anime/${id}`
-      );
-      setTopAnime(response.data.data);
-    } catch (error) {
-      console.log("masuk ke error", error);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/anime/${id}`
+        );
+        setTopAnime(response.data.data);
+      } catch (error) {
+        console.log("masuk ke error", error);
+      }
+    };
     fetchData();
   }, [id]);
 
