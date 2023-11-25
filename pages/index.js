@@ -28,6 +28,7 @@ export const getStaticProps = async () => {
     props: {
       data: animeData,
     },
+    revalidate: 3600,
   };
 };
 
